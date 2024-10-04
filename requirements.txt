@@ -16,3 +16,4 @@ typing_extensions==4.12.2
 urllib3==2.2.3
 uvicorn==0.31.0
 pytz==2024.2
+python-dotenv==1.0.1

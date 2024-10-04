@@ -4,12 +4,15 @@ from pydantic import BaseModel
 import sqlite3
 from typing import List
 import os
+import dotenv
 from datetime import datetime, timedelta
 
 app = FastAPI()
 
+dotenv.load_dotenv()
+
 # API Key Authentication
-API_KEY = os.getenv("API_KEY")
+API_KEY = os.environ.get("API_KEY")
 if not API_KEY:
     raise ValueError("API_KEY environment variable must be set")
 
