@@ -45,7 +45,7 @@ def get_week_price_data(api_key: str = Depends(get_api_key)):
         SELECT 
             strftime('%Y-%m-%d %H:00:00', timestamp) as hour,
             AVG(priceUsd) as avg_price
-        FROM pair_data
+        FROM pair_data_recent
         WHERE timestamp >= ?
         GROUP BY hour
         ORDER BY hour
@@ -65,7 +65,7 @@ def get_alltime_price_data(api_key: str = Depends(get_api_key)):
         SELECT 
             strftime('%Y-%m-%d', timestamp) as day,
             AVG(priceUsd) as avg_price
-        FROM pair_data
+        FROM pair_data_recent
         GROUP BY day
         ORDER BY day
     """)
@@ -83,7 +83,7 @@ def get_day_price_data(api_key: str = Depends(get_api_key)):
     
     cursor.execute("""
         SELECT timestamp, priceUsd as price
-        FROM pair_data
+        FROM pair_data_recent
         WHERE timestamp >= ?
         ORDER BY timestamp
     """, (one_day_ago,))
@@ -100,7 +100,7 @@ def get_24h_volume(api_key: str = Depends(get_api_key)):
     
     cursor.execute("""
         SELECT volume_h24 as total_volume
-        FROM pair_data
+        FROM pair_data_recent
         ORDER BY timestamp DESC
         LIMIT 1
     """)
@@ -120,7 +120,7 @@ def get_current_price(api_key: str = Depends(get_api_key)):
     
     cursor.execute("""
         SELECT timestamp, priceUsd as price
-        FROM pair_data
+        FROM pair_data_recent
         ORDER BY timestamp DESC
         LIMIT 1
     """)
@@ -132,61 +132,6 @@ def get_current_price(api_key: str = Depends(get_api_key)):
         return {"timestamp": row['timestamp'], "price": str(row['price'])}
     else:
         raise HTTPException(status_code=404, detail="No price data available")
-
-@app.get("/price/change24h")
-def get_price_change_24h(api_key: str = Depends(get_api_key)):
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    
-    # Get current price
-    cursor.execute("""
-        SELECT timestamp, priceUsd as price
-        FROM pair_data
-        ORDER BY timestamp DESC
-        LIMIT 1
-    """)
-    current_row = cursor.fetchone()
-    
-    if not current_row:
-        conn.close()
-        raise HTTPException(status_code=404, detail="No current price data available")
-    
-    current_price = current_row['price']
-    current_timestamp = current_row['timestamp']
-    
-    # Get price 24 hours ago
-    twenty_four_hours_ago = (datetime.fromisoformat(current_timestamp) - timedelta(hours=24)).isoformat()
-    cursor.execute("""
-        SELECT priceUsd as price
-        FROM pair_data
-        WHERE timestamp <= ?
-        ORDER BY timestamp DESC
-        LIMIT 1
-    """, (twenty_four_hours_ago,))
-    
-    old_row = cursor.fetchone()
-    conn.close()
-    
-    if not old_row:
-        return {
-            "current_price": str(current_price),
-            "current_timestamp": current_timestamp,
-            "price_change_24h": None,
-            "price_change_percentage_24h": None,
-            "error": "No price data available for 24 hours ago"
-        }
-    
-    old_price = old_row['price']
-    price_change = float(current_price) - float(old_price)
-    price_change_percentage = (price_change / float(old_price)) * 100
-    
-    return {
-        "current_price": str(current_price),
-        "current_timestamp": current_timestamp,
-        "price_24h_ago": str(old_price),
-        "price_change_24h": str(price_change),
-        "price_change_percentage_24h": str(price_change_percentage)
-    }
 
 if __name__ == "__main__":
     import uvicorn
