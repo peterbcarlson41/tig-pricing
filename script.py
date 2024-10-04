@@ -3,7 +3,7 @@ import sqlite3
 import time
 import logging
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -107,7 +107,7 @@ def insert_data(data):
         return
 
     pair = data['pairs'][0]
-    timestamp = datetime.now().isoformat()
+    timestamp = datetime.now(timezone.utc).isoformat()
 
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
