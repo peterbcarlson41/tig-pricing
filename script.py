@@ -1,8 +1,7 @@
 import requests
 import sqlite3
-import time
 import logging
-import json
+import time
 from datetime import datetime, timezone
 
 # Set up logging
@@ -18,9 +17,9 @@ def create_tables():
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
     
-    # Main pair data table
+    # Main pair data table (for most recent data)
     cursor.execute('''
-    CREATE TABLE IF NOT EXISTS pair_data (
+    CREATE TABLE IF NOT EXISTS pair_data_recent (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         timestamp TEXT,
         chainId TEXT,
@@ -31,7 +30,36 @@ def create_tables():
         priceUsd TEXT,
         fdv REAL,
         marketCap REAL,
-        pairCreatedAt INTEGER
+        pairCreatedAt INTEGER,
+        volume_m5 REAL,
+        volume_h1 REAL,
+        volume_h6 REAL,
+        volume_h24 REAL,
+        priceChange_m5 REAL,
+        priceChange_h1 REAL,
+        priceChange_h6 REAL,
+        priceChange_h24 REAL,
+        txns_m5_buys INTEGER,
+        txns_m5_sells INTEGER,
+        txns_h1_buys INTEGER,
+        txns_h1_sells INTEGER,
+        txns_h6_buys INTEGER,
+        txns_h6_sells INTEGER,
+        txns_h24_buys INTEGER,
+        txns_h24_sells INTEGER,
+        liquidity_usd REAL,
+        liquidity_base REAL,
+        liquidity_quote REAL
+    )
+    ''')
+
+    # Historical price and volume data table
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS price_volume_history (
+        timestamp TEXT,
+        priceUsd TEXT,
+        volume_h24 REAL,
+        PRIMARY KEY (timestamp)
     )
     ''')
 
@@ -43,51 +71,14 @@ def create_tables():
             address TEXT,
             name TEXT,
             symbol TEXT,
-            FOREIGN KEY (pair_id) REFERENCES pair_data (id)
+            FOREIGN KEY (pair_id) REFERENCES pair_data_recent (id)
         )
         ''')
 
-    # Transactions table
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS transactions (
-        pair_id INTEGER,
-        timeframe TEXT,
-        buys INTEGER,
-        sells INTEGER,
-        FOREIGN KEY (pair_id) REFERENCES pair_data (id)
-    )
-    ''')
-
-    # Volume table
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS volume (
-        pair_id INTEGER,
-        timeframe TEXT,
-        amount REAL,
-        FOREIGN KEY (pair_id) REFERENCES pair_data (id)
-    )
-    ''')
-
-    # Price change table
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS price_change (
-        pair_id INTEGER,
-        timeframe TEXT,
-        change REAL,
-        FOREIGN KEY (pair_id) REFERENCES pair_data (id)
-    )
-    ''')
-
-    # Liquidity table
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS liquidity (
-        pair_id INTEGER,
-        usd REAL,
-        base REAL,
-        quote REAL,
-        FOREIGN KEY (pair_id) REFERENCES pair_data (id)
-    )
-    ''')
+    # Create indexes for faster queries
+    cursor.execute('CREATE INDEX IF NOT EXISTS idx_price_volume_history_timestamp ON price_volume_history (timestamp)')
+    cursor.execute('CREATE INDEX IF NOT EXISTS idx_price_volume_history_price ON price_volume_history (priceUsd)')
+    cursor.execute('CREATE INDEX IF NOT EXISTS idx_price_volume_history_volume ON price_volume_history (volume_h24)')
 
     conn.commit()
     conn.close()
@@ -112,55 +103,59 @@ def insert_data(data):
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
 
-    # Insert main pair data
+    # Insert into pair_data_recent (replacing any existing record)
     cursor.execute('''
-    INSERT INTO pair_data (timestamp, chainId, dexId, url, pairAddress, priceNative, priceUsd, fdv, marketCap, pairCreatedAt)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT OR REPLACE INTO pair_data_recent (
+        timestamp, chainId, dexId, url, pairAddress, priceNative, priceUsd, 
+        fdv, marketCap, pairCreatedAt, 
+        volume_m5, volume_h1, volume_h6, volume_h24,
+        priceChange_m5, priceChange_h1, priceChange_h6, priceChange_h24,
+        txns_m5_buys, txns_m5_sells, txns_h1_buys, txns_h1_sells,
+        txns_h6_buys, txns_h6_sells, txns_h24_buys, txns_h24_sells,
+        liquidity_usd, liquidity_base, liquidity_quote
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ''', (
         timestamp, pair['chainId'], pair['dexId'], pair['url'], pair['pairAddress'],
-        pair['priceNative'], pair['priceUsd'], pair['fdv'], pair['marketCap'], pair['pairCreatedAt']
+        pair['priceNative'], pair['priceUsd'], pair['fdv'], pair['marketCap'], pair['pairCreatedAt'],
+        pair['volume'].get('m5'), pair['volume'].get('h1'), pair['volume'].get('h6'), pair['volume'].get('h24'),
+        pair['priceChange'].get('m5'), pair['priceChange'].get('h1'), pair['priceChange'].get('h6'), pair['priceChange'].get('h24'),
+        pair['txns']['m5']['buys'], pair['txns']['m5']['sells'],
+        pair['txns']['h1']['buys'], pair['txns']['h1']['sells'],
+        pair['txns']['h6']['buys'], pair['txns']['h6']['sells'],
+        pair['txns']['h24']['buys'], pair['txns']['h24']['sells'],
+        pair['liquidity']['usd'], pair['liquidity']['base'], pair['liquidity']['quote']
     ))
-    pair_id = cursor.lastrowid
 
-    # Insert token data
-    for token_type in ['base', 'quote']:
-        token = pair[f'{token_type}Token']
-        cursor.execute(f'''
-        INSERT INTO {token_type}_token (pair_id, address, name, symbol)
-        VALUES (?, ?, ?, ?)
-        ''', (pair_id, token['address'], token['name'], token['symbol']))
-
-    # Insert transactions data
-    for timeframe, txn_data in pair['txns'].items():
-        cursor.execute('''
-        INSERT INTO transactions (pair_id, timeframe, buys, sells)
-        VALUES (?, ?, ?, ?)
-        ''', (pair_id, timeframe, txn_data['buys'], txn_data['sells']))
-
-    # Insert volume data
-    for timeframe, volume in pair['volume'].items():
-        cursor.execute('''
-        INSERT INTO volume (pair_id, timeframe, amount)
-        VALUES (?, ?, ?)
-        ''', (pair_id, timeframe, volume))
-
-    # Insert price change data
-    for timeframe, change in pair['priceChange'].items():
-        cursor.execute('''
-        INSERT INTO price_change (pair_id, timeframe, change)
-        VALUES (?, ?, ?)
-        ''', (pair_id, timeframe, change))
-
-    # Insert liquidity data
-    liquidity = pair['liquidity']
+    # Insert into price_volume_history
     cursor.execute('''
-    INSERT INTO liquidity (pair_id, usd, base, quote)
-    VALUES (?, ?, ?, ?)
-    ''', (pair_id, liquidity['usd'], liquidity['base'], liquidity['quote']))
+    INSERT OR REPLACE INTO price_volume_history (timestamp, priceUsd, volume_h24)
+    VALUES (?, ?, ?)
+    ''', (timestamp, pair['priceUsd'], pair['volume'].get('h24')))
 
     conn.commit()
     conn.close()
     logging.info(f"Data inserted for timestamp: {timestamp}")
+
+def get_recent_data():
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM pair_data_recent ORDER BY timestamp DESC LIMIT 1")
+    result = cursor.fetchone()
+    conn.close()
+    return result
+
+def get_historical_data(start_date, end_date):
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    cursor.execute("""
+    SELECT timestamp, priceUsd, volume_h24
+    FROM price_volume_history
+    WHERE timestamp BETWEEN ? AND ?
+    ORDER BY timestamp
+    """, (start_date, end_date))
+    results = cursor.fetchall()
+    conn.close()
+    return results
 
 def main():
     create_tables()
@@ -168,7 +163,7 @@ def main():
         data = fetch_data()
         if data:
             insert_data(data)
-        time.sleep(60)  # Wait for 60 seconds
+        time.sleep(60) 
 
 if __name__ == "__main__":
     main()
