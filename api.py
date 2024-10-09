@@ -62,18 +62,30 @@ def get_alltime_price_data(api_key: str = Depends(get_api_key)):
     cursor = conn.cursor()
     
     cursor.execute("""
-        SELECT 
-            strftime('%Y-%m-%d', timestamp) as day,
-            AVG(priceUsd) as avg_price
-        FROM pair_data_recent
-        GROUP BY day
-        ORDER BY day
+        SELECT timestamp, price
+        FROM token_price_history
+        ORDER BY timestamp
     """)
     
     rows = cursor.fetchall()
+    
+    # If there's no data in token_price_history, fall back to pair_data_recent
+    if not rows:
+        cursor.execute("""
+            SELECT 
+                strftime('%Y-%m-%d', timestamp) as day,
+                AVG(priceUsd) as avg_price
+            FROM pair_data_recent
+            GROUP BY day
+            ORDER BY day
+        """)
+        rows = cursor.fetchall()
+        conn.close()
+        return [{"timestamp": row['day'], "price": str(row['avg_price'])} for row in rows]
+    
     conn.close()
     
-    return [{"timestamp": row['day'], "price": str(row['avg_price'])} for row in rows]
+    return [{"timestamp": row['timestamp'], "price": str(row['price'])} for row in rows]
 
 @app.get("/price/day", response_model=List[PriceData])
 def get_day_price_data(api_key: str = Depends(get_api_key)):
