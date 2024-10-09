@@ -6,7 +6,7 @@ from datetime import datetime, timezone, timedelta
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Database setup
-DB_NAME = "dexscreener_data.db"
+DB_NAME = "/home/peter/tig-pricing/dexscreener_data.db"
 
 def calculate_and_insert_daily_average():
     conn = sqlite3.connect(DB_NAME)
