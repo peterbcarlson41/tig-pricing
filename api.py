@@ -124,6 +124,26 @@ def get_24h_volume(api_key: str = Depends(get_api_key)):
         return {"volume_24h": str(row['total_volume'])}
     else:
         return {"volume_24h": "0"}
+    
+@app.get("/marketcap")
+def get_24h_volume(api_key: str = Depends(get_api_key)):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute("""
+        SELECT marketCap as market_cap
+        FROM pair_data_recent
+        ORDER BY timestamp DESC
+        LIMIT 1
+    """)
+    
+    row = cursor.fetchone()
+    conn.close()
+    
+    if row and row['market_cap'] is not None:
+        return {"market_cap": str(row['market_cap'])}
+    else:
+        return {"market_cap": "0"}
 
 @app.get("/price/current")
 def get_current_price(api_key: str = Depends(get_api_key)):
