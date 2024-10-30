@@ -3,15 +3,15 @@ from fastapi.security import APIKeyHeader
 from pydantic import BaseModel
 import sqlite3
 from typing import List
+from datetime import datetime, timedelta, timezone
 import os
 import dotenv
-from datetime import datetime, timedelta, timezone
 
 app = FastAPI()
 
 dotenv.load_dotenv()
 
-# API Key Authentication
+# API Key Authentication setup remains the same
 API_KEY = os.environ.get("API_KEY")
 if not API_KEY:
     raise ValueError("API_KEY environment variable must be set")
@@ -23,147 +23,97 @@ def get_api_key(api_key: str = Depends(api_key_header)):
         raise HTTPException(status_code=403, detail="Invalid API Key")
     return api_key
 
-# Database setup
-DB_NAME = "dexscreener_data.db"
-
+# Updated Pydantic models to match frontend expectations
 class PriceData(BaseModel):
-    timestamp: str
-    price: str
+    date: str
+    price: float
+    volume: float
+    change: float
+
+class PriceResponse(BaseModel):
+    currentPrice: float
+    priceChange: float
+    historicalData: List[PriceData]
 
 def get_db_connection():
-    conn = sqlite3.connect(DB_NAME)
+    conn = sqlite3.connect("dexscreener_data.db")
     conn.row_factory = sqlite3.Row
     return conn
 
-@app.get("/price/week", response_model=List[PriceData])
-def get_week_price_data(api_key: str = Depends(get_api_key)):
+def calculate_price_change(current_price: float, previous_price: float) -> float:
+    if previous_price == 0:
+        return 0
+    return ((current_price - previous_price) / previous_price) * 100
+
+@app.get("/api/price", response_model=PriceResponse)
+def get_price_data(api_key: str = Depends(get_api_key)):
     conn = get_db_connection()
     cursor = conn.cursor()
-    one_week_ago = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
     
+    # Get current price and timestamp
+    cursor.execute("""
+        SELECT timestamp, priceUsd as price, volume_h24, marketCap
+        FROM pair_data_recent
+        ORDER BY timestamp DESC
+        LIMIT 1
+    """)
+    current_data = cursor.fetchone()
+    
+    if not current_data:
+        raise HTTPException(status_code=404, detail="No price data available")
+    
+    current_price = float(current_data['price'])
+    
+    # Get historical data for the past week
+    one_week_ago = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
     cursor.execute("""
         SELECT 
-            strftime('%Y-%m-%d %H:00:00', timestamp) as hour,
-            AVG(priceUsd) as avg_price
+            strftime('%Y-%m-%d %H:00:00', timestamp) as date,
+            AVG(priceUsd) as price,
+            AVG(volume_h24) as volume
         FROM pair_data_recent
         WHERE timestamp >= ?
-        GROUP BY hour
-        ORDER BY hour
+        GROUP BY date
+        ORDER BY date
     """, (one_week_ago,))
     
-    rows = cursor.fetchall()
-    conn.close()
+    historical_rows = cursor.fetchall()
     
-    return [{"timestamp": row['hour'], "price": str(row['avg_price'])} for row in rows]
-
-@app.get("/price/alltime", response_model=List[PriceData])
-def get_alltime_price_data(api_key: str = Depends(get_api_key)):
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    
-    cursor.execute("""
-        SELECT timestamp, price
-        FROM token_price_history
-        ORDER BY timestamp
-    """)
-    
-    rows = cursor.fetchall()
-    
-    # If there's no data in token_price_history, fall back to pair_data_recent
-    if not rows:
-        cursor.execute("""
-            SELECT 
-                strftime('%Y-%m-%d', timestamp) as day,
-                AVG(priceUsd) as avg_price
-            FROM pair_data_recent
-            GROUP BY day
-            ORDER BY day
-        """)
-        rows = cursor.fetchall()
-        conn.close()
-        return [{"timestamp": row['day'], "price": str(row['avg_price'])} for row in rows]
-    
-    conn.close()
-    
-    return [{"timestamp": row['timestamp'], "price": str(row['price'])} for row in rows]
-
-@app.get("/price/day", response_model=List[PriceData])
-def get_day_price_data(api_key: str = Depends(get_api_key)):
-    conn = get_db_connection()
-    cursor = conn.cursor()
+    # Calculate price change (24h)
     one_day_ago = (datetime.now(timezone.utc) - timedelta(days=1)).isoformat()
-    
     cursor.execute("""
-        SELECT timestamp, priceUsd as price
+        SELECT priceUsd as price
         FROM pair_data_recent
-        WHERE timestamp >= ?
-        ORDER BY timestamp
+        WHERE timestamp <= ?
+        ORDER BY timestamp DESC
+        LIMIT 1
     """, (one_day_ago,))
     
-    rows = cursor.fetchall()
+    previous_day_data = cursor.fetchone()
+    previous_price = float(previous_day_data['price']) if previous_day_data else current_price
+    price_change = calculate_price_change(current_price, previous_price)
+    
     conn.close()
     
-    return [{"timestamp": row['timestamp'], "price": str(row['price'])} for row in rows]
-
-@app.get("/volume/24h")
-def get_24h_volume(api_key: str = Depends(get_api_key)):
-    conn = get_db_connection()
-    cursor = conn.cursor()
+    # Transform historical data to match frontend expectations
+    historical_data = []
+    previous_price = None
+    for row in historical_rows:
+        price = float(row['price'])
+        change = calculate_price_change(price, previous_price) if previous_price is not None else 0
+        historical_data.append(PriceData(
+            date=row['date'],
+            price=price,
+            volume=float(row['volume']) if row['volume'] else 0,
+            change=change
+        ))
+        previous_price = price
     
-    cursor.execute("""
-        SELECT volume_h24 as total_volume
-        FROM pair_data_recent
-        ORDER BY timestamp DESC
-        LIMIT 1
-    """)
-    
-    row = cursor.fetchone()
-    conn.close()
-    
-    if row and row['total_volume'] is not None:
-        return {"volume_24h": str(row['total_volume'])}
-    else:
-        return {"volume_24h": "0"}
-    
-@app.get("/marketcap")
-def get_24h_volume(api_key: str = Depends(get_api_key)):
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    
-    cursor.execute("""
-        SELECT marketCap as market_cap
-        FROM pair_data_recent
-        ORDER BY timestamp DESC
-        LIMIT 1
-    """)
-    
-    row = cursor.fetchone()
-    conn.close()
-    
-    if row and row['market_cap'] is not None:
-        return {"market_cap": str(row['market_cap'])}
-    else:
-        return {"market_cap": "0"}
-
-@app.get("/price/current")
-def get_current_price(api_key: str = Depends(get_api_key)):
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    
-    cursor.execute("""
-        SELECT timestamp, priceUsd as price
-        FROM pair_data_recent
-        ORDER BY timestamp DESC
-        LIMIT 1
-    """)
-    
-    row = cursor.fetchone()
-    conn.close()
-    
-    if row:
-        return {"timestamp": row['timestamp'], "price": str(row['price'])}
-    else:
-        raise HTTPException(status_code=404, detail="No price data available")
+    return PriceResponse(
+        currentPrice=current_price,
+        priceChange=price_change,
+        historicalData=historical_data
+    )
 
 if __name__ == "__main__":
     import uvicorn
