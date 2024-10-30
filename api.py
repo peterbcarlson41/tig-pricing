@@ -68,12 +68,12 @@ def get_price_data(api_key: str = Depends(get_api_key)):
     one_week_ago = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
     cursor.execute("""
         SELECT 
-            strftime('%Y-%m-%d %H:00:00', timestamp) as date,
+            strftime('%Y-%m-%dT%H:%M:%S.000Z', timestamp) as date,
             AVG(priceUsd) as price,
             AVG(volume_h24) as volume
         FROM pair_data_recent
         WHERE timestamp >= ?
-        GROUP BY date
+        GROUP BY strftime('%Y-%m-%d %H:00:00', timestamp)
         ORDER BY date
     """, (one_week_ago,))
     
