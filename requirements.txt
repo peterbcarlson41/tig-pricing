@@ -17,3 +17,5 @@ urllib3==2.2.3
 uvicorn==0.31.0
 pytz==2024.2
 python-dotenv==1.0.1
+supabase==0.2.3
+python-dotenv==0.19.2

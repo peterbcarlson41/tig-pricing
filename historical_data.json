@@ -1,363 +1,1017 @@
 {
-    "data": {
-        "token": {
-            "id": "VG9rZW46QkFTRV8weDBjMDNjZTI3MGI0ODI2ZWM2MmU3ZGQwMDdmMGI3MTYwNjg2MzlmN2I=",
-            "address": "0x0c03ce270b4826ec62e7dd007f0b716068639f7b",
-            "chain": "BASE",
-            "market": {
-                "id": "VG9rZW5NYXJrZXQ6QkFTRV8weDBjMDNjZTI3MGI0ODI2ZWM2MmU3ZGQwMDdmMGI3MTYwNjg2MzlmN2JfVVNE",
-                "price": {
-                    "id": "QW1vdW50OjEuODc5MTQyMzg4MDc5NDQxOF9VU0Q=",
-                    "value": 1.8791423880794418,
-                    "__typename": "Amount"
-                },
-                "priceHistory": [
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6My43NTM4MDQ0MzU0NTY5ODUzXzE3MjM1MDcyMDBfVVNE",
-                        "value": 3.7538044354569853,
-                        "timestamp": 1723507200,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6My42MDEwMTQxNjczNzc5MDZfMTcyMzU5MzYwMF9VU0Q=",
-                        "value": 3.601014167377906,
-                        "timestamp": 1723593600,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wMzc4NDA1NzAwOTg1ODI3XzE3MjM2ODAwMDBfVVNE",
-                        "value": 3.0378405700985827,
-                        "timestamp": 1723680000,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi45NTA3Njc1MjM0MTExNjVfMTcyMzc2NjQwMF9VU0Q=",
-                        "value": 2.950767523411165,
-                        "timestamp": 1723766400,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi43MjE2MDkwODE5NTY1MzE3XzE3MjM4NTI4MDBfVVNE",
-                        "value": 2.7216090819565317,
-                        "timestamp": 1723852800,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi42ODc1MDI2MTQ0OTg3NDc3XzE3MjM5MzkyMDBfVVNE",
-                        "value": 2.6875026144987477,
-                        "timestamp": 1723939200,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6My4yMzI3ODcyMTkzODE4ODhfMTcyNDAyNTYwMF9VU0Q=",
-                        "value": 3.232787219381888,
-                        "timestamp": 1724025600,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi45NzI2OTk0OTM3NDk4Mjc3XzE3MjQxMTIwMDBfVVNE",
-                        "value": 2.9726994937498277,
-                        "timestamp": 1724112000,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wMzE3MzQzNzkyOTI0ODVfMTcyNDE5ODQwMF9VU0Q=",
-                        "value": 3.031734379292485,
-                        "timestamp": 1724198400,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNTAyMzM2Njg5MjA5NjJfMTcyNDI4NDgwMF9VU0Q=",
-                        "value": 3.150233668920962,
-                        "timestamp": 1724284800,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wMDY0MTA4ODIwOTkxNzlfMTcyNDM3MTIwMF9VU0Q=",
-                        "value": 3.006410882099179,
-                        "timestamp": 1724371200,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wMzkzMDcxMjU1NTE5N18xNzI0NDU3NjAwX1VTRA==",
-                        "value": 3.03930712555197,
-                        "timestamp": 1724457600,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNjA1NzM3NzY1NjI4NzI1XzE3MjQ1NDQwMDBfVVNE",
-                        "value": 3.1605737765628725,
-                        "timestamp": 1724544000,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi44OTc1NzQwODk1NDc0NTVfMTcyNDYzMDQwMF9VU0Q=",
-                        "value": 2.897574089547455,
-                        "timestamp": 1724630400,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi45OTE1Njk1NTI2MDcyMjlfMTcyNDcxNjgwMF9VU0Q=",
-                        "value": 2.991569552607229,
-                        "timestamp": 1724716800,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi45MjQxNDYzNTU0NjAxNF8xNzI0ODAzMjAwX1VTRA==",
-                        "value": 2.92414635546014,
-                        "timestamp": 1724803200,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi41NTkzMzczNzQ2NTk1Mzg3XzE3MjQ4ODk2MDBfVVNE",
-                        "value": 2.5593373746595387,
-                        "timestamp": 1724889600,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi4zODQwNDg0NTMxMzg0MTgzXzE3MjQ5NzYwMDBfVVNE",
-                        "value": 2.3840484531384183,
-                        "timestamp": 1724976000,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi4yOTQwNzgyMjAxMjg4OTg1XzE3MjUwNjI0MDBfVVNE",
-                        "value": 2.2940782201288985,
-                        "timestamp": 1725062400,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi4yMDQyNTI0OTQ0NzUzMjYzXzE3MjUxNDg4MDBfVVNE",
-                        "value": 2.2042524944753263,
-                        "timestamp": 1725148800,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS45ODAyOTYzNzUxNjYxXzE3MjUyMzUyMDBfVVNE",
-                        "value": 1.9802963751661,
-                        "timestamp": 1725235200,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS43MTM1NjM1Njg2MTQzODE3XzE3MjUzMjE2MDBfVVNE",
-                        "value": 1.7135635686143817,
-                        "timestamp": 1725321600,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS43MDkwNTI1ODQwNzMxMzkyXzE3MjU0MDgwMDBfVVNE",
-                        "value": 1.7090525840731392,
-                        "timestamp": 1725408000,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS43NDkxNDY2MzY2NDY5MzRfMTcyNTQ5NDQwMF9VU0Q=",
-                        "value": 1.749146636646934,
-                        "timestamp": 1725494400,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS44NjUyNzE3MTUyODM3NDU3XzE3MjU1ODA4MDBfVVNE",
-                        "value": 1.8652717152837457,
-                        "timestamp": 1725580800,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS44ODUxMDQ3Mjc5NTE4OTFfMTcyNTY2NzIwMF9VU0Q=",
-                        "value": 1.885104727951891,
-                        "timestamp": 1725667200,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS42MjEzNjk0MTAzNTc4MTMxXzE3MjU3NTM2MDBfVVNE",
-                        "value": 1.6213694103578131,
-                        "timestamp": 1725753600,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS4zODk5NTk3MDg3NDg5MzZfMTcyNTg0MDAwMF9VU0Q=",
-                        "value": 1.389959708748936,
-                        "timestamp": 1725840000,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS41MDg0MTA3MDE4NzAzNzk2XzE3MjU5MjY0MDBfVVNE",
-                        "value": 1.5084107018703796,
-                        "timestamp": 1725926400,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS4zOTE2NzA1MjY3ODA3MDU1XzE3MjYwMTI4MDBfVVNE",
-                        "value": 1.3916705267807055,
-                        "timestamp": 1726012800,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS4zNDczMjk4MjgwNjA5MTcyXzE3MjYwOTkyMDBfVVNE",
-                        "value": 1.3473298280609172,
-                        "timestamp": 1726099200,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS40MDEyMDI2NDE1MjIyNTU0XzE3MjYxODU2MDBfVVNE",
-                        "value": 1.4012026415222554,
-                        "timestamp": 1726185600,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS4zNjgyNTQ1NDI1NTg3NDhfMTcyNjI3MjAwMF9VU0Q=",
-                        "value": 1.368254542558748,
-                        "timestamp": 1726272000,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS40MTM4ODE1OTA2MDcwMzc0XzE3MjYzNTg0MDBfVVNE",
-                        "value": 1.4138815906070374,
-                        "timestamp": 1726358400,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS4zNzcwODE1NjcwNTcyNjk2XzE3MjY0NDQ4MDBfVVNE",
-                        "value": 1.3770815670572696,
-                        "timestamp": 1726444800,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS4zNzQ0NDk2NDUxMjg3ODgyXzE3MjY1MzEyMDBfVVNE",
-                        "value": 1.3744496451287882,
-                        "timestamp": 1726531200,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS42ODk1NDk5MDYwMzU3NjY2XzE3MjY2MTc2MDBfVVNE",
-                        "value": 1.6895499060357666,
-                        "timestamp": 1726617600,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS42NTM4Njk3MDM1Mzc0ODU5XzE3MjY3MDQwMDBfVVNE",
-                        "value": 1.6538697035374859,
-                        "timestamp": 1726704000,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS43NDE2OTEwNzg5MTY0OTU5XzE3MjY3OTA0MDBfVVNE",
-                        "value": 1.7416910789164959,
-                        "timestamp": 1726790400,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS42MjUzNDY5Njc0ODcyNTgzXzE3MjY4NzY4MDBfVVNE",
-                        "value": 1.6253469674872583,
-                        "timestamp": 1726876800,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS41MjkwMTA5Mzg1MDY5OTM3XzE3MjY5NjMyMDBfVVNE",
-                        "value": 1.5290109385069937,
-                        "timestamp": 1726963200,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi4wNjIyNjE3Njk3ODE2MTE3XzE3MjcwNDk2MDBfVVNE",
-                        "value": 2.0622617697816117,
-                        "timestamp": 1727049600,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi4wMzk4MDUwMjA1MzQ3MzU2XzE3MjcxMzYwMDBfVVNE",
-                        "value": 2.0398050205347356,
-                        "timestamp": 1727136000,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi4yODMzNDcxNDg1NjE5ODNfMTcyNzIyMjQwMF9VU0Q=",
-                        "value": 2.283347148561983,
-                        "timestamp": 1727222400,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS45MzE2MjUzNDYzODU5ODJfMTcyNzMwODgwMF9VU0Q=",
-                        "value": 1.931625346385982,
-                        "timestamp": 1727308800,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS44MzUyMDc2NDkyMzg3MzA2XzE3MjczOTUyMDBfVVNE",
-                        "value": 1.8352076492387306,
-                        "timestamp": 1727395200,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS44NTk1NDQ4NDI1MjIxMDYyXzE3Mjc0ODE2MDBfVVNE",
-                        "value": 1.8595448425221062,
-                        "timestamp": 1727481600,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi4wMTQyNDcwODg1MDM1MDg2XzE3Mjc1NjgwMDBfVVNE",
-                        "value": 2.0142470885035086,
-                        "timestamp": 1727568000,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS45ODgzNjcxMDU0MTgzOTkzXzE3Mjc2NTQ0MDBfVVNE",
-                        "value": 1.9883671054183993,
-                        "timestamp": 1727654400,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi4wNzI2Mjg0Mjc1Mzk4MDNfMTcyNzc0MDgwMF9VU0Q=",
-                        "value": 2.072628427539803,
-                        "timestamp": 1727740800,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi4xMjc1OTI1MjE2Mzc3NThfMTcyNzgyNzIwMF9VU0Q=",
-                        "value": 2.127592521637758,
-                        "timestamp": 1727827200,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS42ODkyODQ0MTMzMTk2NjY3XzE3Mjc5MTM2MDBfVVNE",
-                        "value": 1.6892844133196667,
-                        "timestamp": 1727913600,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS45NDgwMDY3NTI2OTUyMTRfMTcyODAwMDAwMF9VU0Q=",
-                        "value": 1.948006752695214,
-                        "timestamp": 1728000000,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS44NzEzNTk3NDU0NzU4MjA0XzE3MjgwODY0MDBfVVNE",
-                        "value": 1.8713597454758204,
-                        "timestamp": 1728086400,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS42ODY2NTAzOTA5NzgwMDE3XzE3MjgxNzI4MDBfVVNE",
-                        "value": 1.6866503909780017,
-                        "timestamp": 1728172800,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS43OTMxMzA3MzgyMzgwNjg2XzE3MjgyNTkyMDBfVVNE",
-                        "value": 1.7931307382380686,
-                        "timestamp": 1728259200,
-                        "__typename": "TimestampedAmount"
-                    },
-                    {
-                        "id": "VGltZXN0YW1wZWRBbW91bnQ6MS44Nzk0MjY5MDM2MjQ5MTA3XzE3MjgzNDU2MDBfVVNE",
-                        "value": 1.8794269036249107,
-                        "timestamp": 1728345600,
-                        "__typename": "TimestampedAmount"
-                    }
-                ],
-                "__typename": "TokenMarket"
-            },
-            "__typename": "Token"
-        }
+  "data": {
+    "token": {
+      "id": "VG9rZW46QkFTRV8weDBjMDNjZTI3MGI0ODI2ZWM2MmU3ZGQwMDdmMGI3MTYwNjg2MzlmN2I=",
+      "address": "0x0c03ce270b4826ec62e7dd007f0b716068639f7b",
+      "chain": "BASE",
+      "market": {
+        "id": "VG9rZW5NYXJrZXQ6QkFTRV8weDBjMDNjZTI3MGI0ODI2ZWM2MmU3ZGQwMDdmMGI3MTYwNjg2MzlmN2JfVVNE",
+        "price": {
+          "id": "QW1vdW50OjMuMTY0Mzk4MDM0ODcwMTY1N19VU0Q=",
+          "value": 3.1643980348701657,
+          "__typename": "Amount"
+        },
+        "priceHistory": [
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNDk3NzU2NTY2MjkzMjAyXzE3MzMwMDA0MDBfVVNE",
+            "value": 3.1497756566293202,
+            "timestamp": 1733000400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMjkyNDQ0MTcxNzk0MDc0XzE3MzMwMDQwMDBfVVNE",
+            "value": 3.1292444171794074,
+            "timestamp": 1733004000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wNTEzMjI2NDEzMDYzODQ4XzE3MzMwMDc2MDBfVVNE",
+            "value": 3.0513226413063848,
+            "timestamp": 1733007600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wNTM2NzM4NDExNzIxNjk2XzE3MzMwMTEyMDBfVVNE",
+            "value": 3.0536738411721696,
+            "timestamp": 1733011200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wNzIwNDI3NTg2ODQzMjNfMTczMzAxNDgwMF9VU0Q=",
+            "value": 3.072042758684323,
+            "timestamp": 1733014800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMDEwMzU5NDE1MDcyMl8xNzMzMDE4NDAwX1VTRA==",
+            "value": 3.10103594150722,
+            "timestamp": 1733018400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTg4MDg1MDc1NjE4Njg2XzE3MzMwMjIwMDBfVVNE",
+            "value": 3.1188085075618686,
+            "timestamp": 1733022000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTc5MDgyNDg4MzM1OTI3XzE3MzMwMjU2MDBfVVNE",
+            "value": 3.1179082488335927,
+            "timestamp": 1733025600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4yOTI2NjM4NDkzMzY3NzZfMTczMzAyOTIwMF9VU0Q=",
+            "value": 3.292663849336776,
+            "timestamp": 1733029200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4zMzU5MzkwNzE0MDY1OTQ2XzE3MzMwMzI4MDBfVVNE",
+            "value": 3.3359390714065946,
+            "timestamp": 1733032800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My40MDIyMjEwNzk2NDI5NTg0XzE3MzMwMzY0MDBfVVNE",
+            "value": 3.4022210796429584,
+            "timestamp": 1733036400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My40MDIxMzI4MjMyMjUyMThfMTczMzA0MDAwMF9VU0Q=",
+            "value": 3.402132823225218,
+            "timestamp": 1733040000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My41MDEyODYxMzQyMTI2MTA3XzE3MzMwNDM2MDBfVVNE",
+            "value": 3.5012861342126107,
+            "timestamp": 1733043600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My44MDE1MDY5MjcyOTM0NjlfMTczMzA0NzIwMF9VU0Q=",
+            "value": 3.801506927293469,
+            "timestamp": 1733047200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My41Njk1MjI0NzYzNDY1MDVfMTczMzA1MDgwMF9VU0Q=",
+            "value": 3.569522476346505,
+            "timestamp": 1733050800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My41MTMwNzE1NDM0ODY1MjhfMTczMzA1NDQwMF9VU0Q=",
+            "value": 3.513071543486528,
+            "timestamp": 1733054400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My41MTE4MjQ2NDM5MDExNzg0XzE3MzMwNTgwMDBfVVNE",
+            "value": 3.5118246439011784,
+            "timestamp": 1733058000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My42MDM0MTkzNDU3MTgxMzY1XzE3MzMwNjE2MDBfVVNE",
+            "value": 3.6034193457181365,
+            "timestamp": 1733061600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My42MjM1ODM0OTgzMDg3NzU2XzE3MzMwNjUyMDBfVVNE",
+            "value": 3.6235834983087756,
+            "timestamp": 1733065200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My42MzA1NjYzNzk0MTE4MDhfMTczMzA2ODgwMF9VU0Q=",
+            "value": 3.630566379411808,
+            "timestamp": 1733068800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My42Mzc4OTY4MDQ2NjkyMjE1XzE3MzMwNzI0MDBfVVNE",
+            "value": 3.6378968046692215,
+            "timestamp": 1733072400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My41MDU1ODYyNzg1NzQyMTY3XzE3MzMwNzYwMDBfVVNE",
+            "value": 3.5055862785742167,
+            "timestamp": 1733076000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My41MTk0NjA4OTA1NjAyMDU2XzE3MzMwNzk2MDBfVVNE",
+            "value": 3.5194608905602056,
+            "timestamp": 1733079600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My41MjU5Mzk1OTUyMjQ3MDA0XzE3MzMwODMyMDBfVVNE",
+            "value": 3.5259395952247004,
+            "timestamp": 1733083200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My41NTcyOTQyMDA3NzcyNDAzXzE3MzMwODY4MDBfVVNE",
+            "value": 3.5572942007772403,
+            "timestamp": 1733086800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My41NzA0OTE5OTQzMzkxMjJfMTczMzA5MDQwMF9VU0Q=",
+            "value": 3.570491994339122,
+            "timestamp": 1733090400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My41NzM5MzQyNDg0NDE5MDE3XzE3MzMwOTQwMDBfVVNE",
+            "value": 3.5739342484419017,
+            "timestamp": 1733094000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My42Njc3MzUxNTI1NzcyMl8xNzMzMDk3NjAwX1VTRA==",
+            "value": 3.66773515257722,
+            "timestamp": 1733097600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My43MjQ0MDIxODQ3NzY0OTFfMTczMzEwMTIwMF9VU0Q=",
+            "value": 3.724402184776491,
+            "timestamp": 1733101200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6NC4xNTI4MzU0OTg2MjMzMDVfMTczMzEwNDgwMF9VU0Q=",
+            "value": 4.152835498623305,
+            "timestamp": 1733104800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6NC4yNjI0NTEwMjU4MzQ0MjRfMTczMzEwODQwMF9VU0Q=",
+            "value": 4.262451025834424,
+            "timestamp": 1733108400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6NC4wMTEyMTA5MzkwMDYyNTJfMTczMzExMjAwMF9VU0Q=",
+            "value": 4.011210939006252,
+            "timestamp": 1733112000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6NC4wMzE3NjM2NjcxMzI3OTJfMTczMzExNTYwMF9VU0Q=",
+            "value": 4.031763667132792,
+            "timestamp": 1733115600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6NC4wMDM4NTc3OTQ3NjEzMTQ1XzE3MzMxMTkyMDBfVVNE",
+            "value": 4.0038577947613145,
+            "timestamp": 1733119200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My45OTA1Nzg5NTU3ODQwMzdfMTczMzEyMjgwMF9VU0Q=",
+            "value": 3.990578955784037,
+            "timestamp": 1733122800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My45NDEwOTQzMDAzNDAyNjFfMTczMzEyNjQwMF9VU0Q=",
+            "value": 3.941094300340261,
+            "timestamp": 1733126400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My45ODQyMjMwNjMzNjU0NDIzXzE3MzMxMzAwMDBfVVNE",
+            "value": 3.9842230633654423,
+            "timestamp": 1733130000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My45NTA5ODM2Mzk2MDAyMzU0XzE3MzMxMzM2MDBfVVNE",
+            "value": 3.9509836396002354,
+            "timestamp": 1733133600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My45NzEzNzA5NTY1NDMwNDY0XzE3MzMxMzcyMDBfVVNE",
+            "value": 3.9713709565430464,
+            "timestamp": 1733137200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My45NzE2MTMwODIwMDA2OTZfMTczMzE0MDgwMF9VU0Q=",
+            "value": 3.971613082000696,
+            "timestamp": 1733140800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My45ODg4MDk1NTk2MzIyNl8xNzMzMTQ0NDAwX1VTRA==",
+            "value": 3.98880955963226,
+            "timestamp": 1733144400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My45NTk3OTc5MTUxNDQ4MDlfMTczMzE0ODAwMF9VU0Q=",
+            "value": 3.959797915144809,
+            "timestamp": 1733148000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My45NTkyODMyNjE5MTM4MjZfMTczMzE1MTYwMF9VU0Q=",
+            "value": 3.959283261913826,
+            "timestamp": 1733151600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My45NTMzNTY0MzIyMzMwNjM0XzE3MzMxNTUyMDBfVVNE",
+            "value": 3.9533564322330634,
+            "timestamp": 1733155200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My45NDY4MDA0MzQ1Nzk3MzI3XzE3MzMxNTg4MDBfVVNE",
+            "value": 3.9468004345797327,
+            "timestamp": 1733158800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My40NzMyNDIxNDk2MDI4NzA1XzE3MzMxNjI0MDBfVVNE",
+            "value": 3.4732421496028705,
+            "timestamp": 1733162400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My40NzA1MTI0Mzc5NDg4NDFfMTczMzE2NjAwMF9VU0Q=",
+            "value": 3.470512437948841,
+            "timestamp": 1733166000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNjI3NzUxNDQwNTQzMDhfMTczMzE2OTYwMF9VU0Q=",
+            "value": 3.162775144054308,
+            "timestamp": 1733169600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNTgxMjA4NTQwMjEwODlfMTczMzE3MzIwMF9VU0Q=",
+            "value": 3.158120854021089,
+            "timestamp": 1733173200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNTIzMjI3MzgxNjA2NDI3XzE3MzMxNzY4MDBfVVNE",
+            "value": 3.1523227381606427,
+            "timestamp": 1733176800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4zNjA3MzIyMzg3MTkzMDJfMTczMzE4MDQwMF9VU0Q=",
+            "value": 3.360732238719302,
+            "timestamp": 1733180400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My41MDcyNjczNjA4MzE5NjM2XzE3MzMxODQwMDBfVVNE",
+            "value": 3.5072673608319636,
+            "timestamp": 1733184000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My42MjQzNzEyMzgwMTQwODc2XzE3MzMxODc2MDBfVVNE",
+            "value": 3.6243712380140876,
+            "timestamp": 1733187600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My42MzQzODI1MjYyOTQzNjM2XzE3MzMxOTEyMDBfVVNE",
+            "value": 3.6343825262943636,
+            "timestamp": 1733191200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My42MzUzMjAxMzYwMDI0Nzk2XzE3MzMxOTQ4MDBfVVNE",
+            "value": 3.6353201360024796,
+            "timestamp": 1733194800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My42NTE2MjAyMTc4OTE3MjYzXzE3MzMxOTg0MDBfVVNE",
+            "value": 3.6516202178917263,
+            "timestamp": 1733198400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My43MTU2NjUyMTc1OTk0NTM2XzE3MzMyMDIwMDBfVVNE",
+            "value": 3.7156652175994536,
+            "timestamp": 1733202000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My44MjY4OTYyNzA2MjQyMTJfMTczMzIwNTYwMF9VU0Q=",
+            "value": 3.826896270624212,
+            "timestamp": 1733205600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My43ODkwMjg3MzU5NTI0ODI2XzE3MzMyMDkyMDBfVVNE",
+            "value": 3.7890287359524826,
+            "timestamp": 1733209200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My43ODY5OTYxMTQwMTI0MTEzXzE3MzMyMTI4MDBfVVNE",
+            "value": 3.7869961140124113,
+            "timestamp": 1733212800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My43NDE3ODc2MTU4MDMzMjZfMTczMzIxNjQwMF9VU0Q=",
+            "value": 3.741787615803326,
+            "timestamp": 1733216400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My44MDY1NzQyOTk1MDkxNl8xNzMzMjIwMDAwX1VTRA==",
+            "value": 3.80657429950916,
+            "timestamp": 1733220000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My44MDk3Njk0OTk4MjkxOTQ3XzE3MzMyMjM2MDBfVVNE",
+            "value": 3.8097694998291947,
+            "timestamp": 1733223600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My43OTI0NjI3MzI5NDI2NjI2XzE3MzMyMjcyMDBfVVNE",
+            "value": 3.7924627329426626,
+            "timestamp": 1733227200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My43OTY3MTk2Njk0NTcyXzE3MzMyMzA4MDBfVVNE",
+            "value": 3.7967196694572,
+            "timestamp": 1733230800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My43OTY3MTk2Njk0NTcyXzE3MzMyMzQ0MDBfVVNE",
+            "value": 3.7967196694572,
+            "timestamp": 1733234400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My43NzI0MjA4ODU1MjIwMjA1XzE3MzMyMzgwMDBfVVNE",
+            "value": 3.7724208855220205,
+            "timestamp": 1733238000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My42MjM4MzY5MTc2NTYwMzY4XzE3MzMyNDE2MDBfVVNE",
+            "value": 3.6238369176560368,
+            "timestamp": 1733241600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My42MTA0NjkxOTQyMzEwODc0XzE3MzMyNDUyMDBfVVNE",
+            "value": 3.6104691942310874,
+            "timestamp": 1733245200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My41MzYwMjI1MDY3ODIzMDdfMTczMzI0ODgwMF9VU0Q=",
+            "value": 3.536022506782307,
+            "timestamp": 1733248800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My40MjYzMTA1ODc3MzUxOTlfMTczMzI1MjQwMF9VU0Q=",
+            "value": 3.426310587735199,
+            "timestamp": 1733252400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My40MzAxNzE0MzA5MzQ4XzE3MzMyNTYwMDBfVVNE",
+            "value": 3.4301714309348,
+            "timestamp": 1733256000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4zNzgxNzUzNDYyODgzMzZfMTczMzI1OTYwMF9VU0Q=",
+            "value": 3.378175346288336,
+            "timestamp": 1733259600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My40MTU5NzA5NTU4NDQwMjQ1XzE3MzMyNjMyMDBfVVNE",
+            "value": 3.4159709558440245,
+            "timestamp": 1733263200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My40MTgxMzIxMTc3NjkxNTM1XzE3MzMyNjY4MDBfVVNE",
+            "value": 3.4181321177691535,
+            "timestamp": 1733266800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi45NzUxMzU3NTk0MTA0MTUzXzE3MzMyNzA0MDBfVVNE",
+            "value": 2.9751357594104153,
+            "timestamp": 1733270400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi43OTIzMTk2OTY1MzYxOTYzXzE3MzMyNzQwMDBfVVNE",
+            "value": 2.7923196965361963,
+            "timestamp": 1733274000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wODQ3MTI2MDU3MjI3NzQzXzE3MzMyNzc2MDBfVVNE",
+            "value": 3.0847126057227743,
+            "timestamp": 1733277600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wNzYzMjY2MzAzMTA1OThfMTczMzI4MTIwMF9VU0Q=",
+            "value": 3.076326630310598,
+            "timestamp": 1733281200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wODk2MzE3NjgxMzMzNjFfMTczMzI4NDgwMF9VU0Q=",
+            "value": 3.089631768133361,
+            "timestamp": 1733284800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wODk4MTY2MjM4NjQyMDFfMTczMzI4ODQwMF9VU0Q=",
+            "value": 3.089816623864201,
+            "timestamp": 1733288400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTY2NzIzNTE3NzIxNjU1XzE3MzMyOTIwMDBfVVNE",
+            "value": 3.1166723517721655,
+            "timestamp": 1733292000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTcwNDM5MzE5NTA2NzNfMTczMzI5NTYwMF9VU0Q=",
+            "value": 3.117043931950673,
+            "timestamp": 1733295600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTc3NzE5NjI0ODk1NTVfMTczMzI5OTIwMF9VU0Q=",
+            "value": 3.117771962489555,
+            "timestamp": 1733299200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTE0MjE0NDA3MDYwMzgzXzE3MzMzMDI4MDBfVVNE",
+            "value": 3.1114214407060383,
+            "timestamp": 1733302800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTUzNzg3ODk5Mzg1MjM3XzE3MzMzMDY0MDBfVVNE",
+            "value": 3.1153787899385237,
+            "timestamp": 1733306400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTQ3OTI2NjY2NjQyNDgzXzE3MzMzMTAwMDBfVVNE",
+            "value": 3.1147926666642483,
+            "timestamp": 1733310000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTk3MTcwMDczNDg2OTFfMTczMzMxMzYwMF9VU0Q=",
+            "value": 3.119717007348691,
+            "timestamp": 1733313600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMzE4MjQ4NDE5NjgyOTVfMTczMzMxNzIwMF9VU0Q=",
+            "value": 3.131824841968295,
+            "timestamp": 1733317200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMzE2MTAzOTIzNzk3MjlfMTczMzMyMDgwMF9VU0Q=",
+            "value": 3.131610392379729,
+            "timestamp": 1733320800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTc2Mzc5MTM1Nzc5NTM1XzE3MzMzMjQ0MDBfVVNE",
+            "value": 3.1176379135779535,
+            "timestamp": 1733324400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wNDkwNjg1NzM1NzM5OTVfMTczMzMyODAwMF9VU0Q=",
+            "value": 3.049068573573995,
+            "timestamp": 1733328000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wNDgyNjU2MjQ0OTMzNThfMTczMzMzMTYwMF9VU0Q=",
+            "value": 3.048265624493358,
+            "timestamp": 1733331600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi43ODk1NDk3NTE5Mzk1MTQ3XzE3MzMzMzUyMDBfVVNE",
+            "value": 2.7895497519395147,
+            "timestamp": 1733335200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi43NDMyNzEwNzgyMzY3MTQ1XzE3MzMzMzg4MDBfVVNE",
+            "value": 2.7432710782367145,
+            "timestamp": 1733338800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi43NjM1ODA2MjM5MTg5MTY3XzE3MzMzNDI0MDBfVVNE",
+            "value": 2.7635806239189167,
+            "timestamp": 1733342400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi43Mjg2MzExMDE1MDg2MjNfMTczMzM0NjAwMF9VU0Q=",
+            "value": 2.728631101508623,
+            "timestamp": 1733346000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi43NzczNzIyMTM5OTYwNDczXzE3MzMzNDk2MDBfVVNE",
+            "value": 2.7773722139960473,
+            "timestamp": 1733349600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi44MjA1OTU0OTkzMDEwMDIzXzE3MzMzNTMyMDBfVVNE",
+            "value": 2.8205954993010023,
+            "timestamp": 1733353200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi44MjY1MjE5NTUwNjgzODI3XzE3MzMzNTY4MDBfVVNE",
+            "value": 2.8265219550683827,
+            "timestamp": 1733356800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi42NjMyNTQ3NDg0MjEwMzA3XzE3MzMzNjA0MDBfVVNE",
+            "value": 2.6632547484210307,
+            "timestamp": 1733360400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi42NTE3NjU1ODcxOTA4MTc1XzE3MzMzNjQwMDBfVVNE",
+            "value": 2.6517655871908175,
+            "timestamp": 1733364000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi42NjA5OTE3MjIwOTc0ODMyXzE3MzMzNjc2MDBfVVNE",
+            "value": 2.6609917220974832,
+            "timestamp": 1733367600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi42NDgxODkwMzczMjY0OF8xNzMzMzcxMjAwX1VTRA==",
+            "value": 2.64818903732648,
+            "timestamp": 1733371200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi42NDkzMTU1NDUwNzYyNjA3XzE3MzMzNzQ4MDBfVVNE",
+            "value": 2.6493155450762607,
+            "timestamp": 1733374800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi42MjM1ODg2NzcwOTU1ODJfMTczMzM3ODQwMF9VU0Q=",
+            "value": 2.623588677095582,
+            "timestamp": 1733378400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi42Mzc3NzIyMzE0MzcxNjk0XzE3MzMzODIwMDBfVVNE",
+            "value": 2.6377722314371694,
+            "timestamp": 1733382000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi43MDg3NzU2OTkyMDk0MTNfMTczMzM4NTYwMF9VU0Q=",
+            "value": 2.708775699209413,
+            "timestamp": 1733385600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi43MzYzNzM1Mzg4ODE3OTNfMTczMzM4OTIwMF9VU0Q=",
+            "value": 2.736373538881793,
+            "timestamp": 1733389200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi43MzM0MjM1NDIwNjEwNjdfMTczMzM5MjgwMF9VU0Q=",
+            "value": 2.733423542061067,
+            "timestamp": 1733392800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi40NjM2NTU2MDcxNjU4NzJfMTczMzM5NjQwMF9VU0Q=",
+            "value": 2.463655607165872,
+            "timestamp": 1733396400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi40MzkyNzgyNjQ0NjgxNDE0XzE3MzM0MDAwMDBfVVNE",
+            "value": 2.4392782644681414,
+            "timestamp": 1733400000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi40OTIyMjU5MjExMzMwNTU1XzE3MzM0MDM2MDBfVVNE",
+            "value": 2.4922259211330555,
+            "timestamp": 1733403600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi41MDk3OTk5MTE1OTY3NTY0XzE3MzM0MDcyMDBfVVNE",
+            "value": 2.5097999115967564,
+            "timestamp": 1733407200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi41MDcwNzIwNjcwMjg0MDYzXzE3MzM0MTA4MDBfVVNE",
+            "value": 2.5070720670284063,
+            "timestamp": 1733410800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi41MTY1MzA4MTk0MTk3NDA0XzE3MzM0MTQ0MDBfVVNE",
+            "value": 2.5165308194197404,
+            "timestamp": 1733414400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi40OTYzOTkyODYxNTEyMTNfMTczMzQxODAwMF9VU0Q=",
+            "value": 2.496399286151213,
+            "timestamp": 1733418000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi41MTA4MzI2NzU2OTIwOTYyXzE3MzM0MjE2MDBfVVNE",
+            "value": 2.5108326756920962,
+            "timestamp": 1733421600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi42MzUxMjE2MjU3OTIyNTE2XzE3MzM0MjUyMDBfVVNE",
+            "value": 2.6351216257922516,
+            "timestamp": 1733425200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi42MzExODUyNjQzNDkzNzhfMTczMzQyODgwMF9VU0Q=",
+            "value": 2.631185264349378,
+            "timestamp": 1733428800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi41NzUxNjQ0NjkxNDg2MzZfMTczMzQzMjQwMF9VU0Q=",
+            "value": 2.575164469148636,
+            "timestamp": 1733432400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi41NzYzMTkyNTMyMzcyMjA4XzE3MzM0Mzk2MDBfVVNE",
+            "value": 2.5763192532372208,
+            "timestamp": 1733439600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi41NzQ5MjczODY4NjM5NTVfMTczMzQ0MzIwMF9VU0Q=",
+            "value": 2.574927386863955,
+            "timestamp": 1733443200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi41Nzc1ODE2ODYxNDQzNjFfMTczMzQ0NjgwMF9VU0Q=",
+            "value": 2.577581686144361,
+            "timestamp": 1733446800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi41ODA0NDMwNzM3NDg4NDZfMTczMzQ1MDQwMF9VU0Q=",
+            "value": 2.580443073748846,
+            "timestamp": 1733450400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi41ODQxNTI2MzA5Mjk0NTI3XzE3MzM0NTQwMDBfVVNE",
+            "value": 2.5841526309294527,
+            "timestamp": 1733454000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi41OTg2ODgwNDk0ODc4OF8xNzMzNDU3NjAwX1VTRA==",
+            "value": 2.59868804948788,
+            "timestamp": 1733457600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi42Mjg4MzEyNDM0NDQ1NzY0XzE3MzM0NjEyMDBfVVNE",
+            "value": 2.6288312434445764,
+            "timestamp": 1733461200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi42NTU0NDQwMzAwNzQ5MTk2XzE3MzM0NjQ4MDBfVVNE",
+            "value": 2.6554440300749196,
+            "timestamp": 1733464800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi42ODM3MTExNDg4MzA3NTMyXzE3MzM0Njg0MDBfVVNE",
+            "value": 2.6837111488307532,
+            "timestamp": 1733468400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi43MzcyNDcyMzIwNzA4M18xNzMzNDcyMDAwX1VTRA==",
+            "value": 2.73724723207083,
+            "timestamp": 1733472000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi43MzE2ODM4MTY5NzEyMzY3XzE3MzM0NzU2MDBfVVNE",
+            "value": 2.7316838169712367,
+            "timestamp": 1733475600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6Mi44NzA5MzQ5MjY2MDgzODU3XzE3MzM0NzkyMDBfVVNE",
+            "value": 2.8709349266083857,
+            "timestamp": 1733479200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wNTMyODI0MDI4NzU5MDQ1XzE3MzM0ODI4MDBfVVNE",
+            "value": 3.0532824028759045,
+            "timestamp": 1733482800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wNTI3MzQ3NzQ3NzU3Nzg3XzE3MzM0ODY0MDBfVVNE",
+            "value": 3.0527347747757787,
+            "timestamp": 1733486400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wNzAyMDQ0NDA5NDA4ODI0XzE3MzM0OTAwMDBfVVNE",
+            "value": 3.0702044409408824,
+            "timestamp": 1733490000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wOTU5ODQ5OTY2MDQyODk0XzE3MzM0OTM2MDBfVVNE",
+            "value": 3.0959849966042894,
+            "timestamp": 1733493600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wOTYyOTU3MzI0NDU0MTFfMTczMzQ5NzIwMF9VU0Q=",
+            "value": 3.096295732445411,
+            "timestamp": 1733497200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMDI2NjI3NzE5OTc2NDhfMTczMzUwMDgwMF9VU0Q=",
+            "value": 3.102662771997648,
+            "timestamp": 1733500800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wOTk0NTg0MzQ3MDI3MDE3XzE3MzM1MDQ0MDBfVVNE",
+            "value": 3.0994584347027017,
+            "timestamp": 1733504400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMDMwMzM1NDY3MDg2OTc0XzE3MzM1MDgwMDBfVVNE",
+            "value": 3.1030335467086974,
+            "timestamp": 1733508000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wOTU4NTU4NDQ0NDc2MTQzXzE3MzM1MTE2MDBfVVNE",
+            "value": 3.0958558444476143,
+            "timestamp": 1733511600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4wOTY2MTk2NjUyNTg2MTk4XzE3MzM1MTUyMDBfVVNE",
+            "value": 3.0966196652586198,
+            "timestamp": 1733515200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNDgyNjk3NTE0ODU5MTY2XzE3MzM1MTg4MDBfVVNE",
+            "value": 3.1482697514859166,
+            "timestamp": 1733518800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMjk1NTU4MTQ2OTQ3NzE1XzE3MzM1MjI0MDBfVVNE",
+            "value": 3.1295558146947715,
+            "timestamp": 1733522400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNDM2NDY2NTYwODY5ODU2XzE3MzM1MjYwMDBfVVNE",
+            "value": 3.1436466560869856,
+            "timestamp": 1733526000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNDM2MjE0MDM4NTQ5NDNfMTczMzUyOTYwMF9VU0Q=",
+            "value": 3.143621403854943,
+            "timestamp": 1733529600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNDMzOTUyNDk1NzE1MzE0XzE3MzM1MzY4MDBfVVNE",
+            "value": 3.1433952495715314,
+            "timestamp": 1733536800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNDM1Mzk2NTgzMDY0NzQ3XzE3MzM1NDA0MDBfVVNE",
+            "value": 3.1435396583064747,
+            "timestamp": 1733540400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMzk3MTk1NDU3NTU5NDE3XzE3MzM1NDQwMDBfVVNE",
+            "value": 3.1397195457559417,
+            "timestamp": 1733544000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMzgxMzYyNTk3ODQ3NzQ0XzE3MzM1NDc2MDBfVVNE",
+            "value": 3.1381362597847744,
+            "timestamp": 1733547600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTg4NjQzMzMzMDA3MTdfMTczMzU1MTIwMF9VU0Q=",
+            "value": 3.118864333300717,
+            "timestamp": 1733551200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTg5NjAyNjg1NDc4NzdfMTczMzU1NDgwMF9VU0Q=",
+            "value": 3.118960268547877,
+            "timestamp": 1733554800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMjAwOTk3MDMxNzgxMjNfMTczMzU1ODQwMF9VU0Q=",
+            "value": 3.120099703178123,
+            "timestamp": 1733558400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMjIwMjc2MDkyNTY3MjI1XzE3MzM1NjIwMDBfVVNE",
+            "value": 3.1220276092567225,
+            "timestamp": 1733562000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMjMzNjA3NzYxNDUxMDZfMTczMzU2NTYwMF9VU0Q=",
+            "value": 3.123360776145106,
+            "timestamp": 1733565600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMjM5MDA3MzA1NjYwNzg2XzE3MzM1NjkyMDBfVVNE",
+            "value": 3.1239007305660786,
+            "timestamp": 1733569200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTk1NTM3NjU2MjA2ODRfMTczMzU3MjgwMF9VU0Q=",
+            "value": 3.119553765620684,
+            "timestamp": 1733572800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTI5OTIxNzk1NTAzNzY1XzE3MzM1NzY0MDBfVVNE",
+            "value": 3.1129921795503765,
+            "timestamp": 1733576400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xMTU3MTE3ODQ3NTg1OF8xNzMzNTgwMDAwX1VTRA==",
+            "value": 3.11571178475858,
+            "timestamp": 1733580000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNDI3NTYwMDc5Mjk3OTFfMTczMzU4MzYwMF9VU0Q=",
+            "value": 3.142756007929791,
+            "timestamp": 1733583600,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNDUxOTMyNDY2MzMzMTdfMTczMzU4NzIwMF9VU0Q=",
+            "value": 3.145193246633317,
+            "timestamp": 1733587200,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNDg1NjExNDY0MjQ5ODlfMTczMzU5MDgwMF9VU0Q=",
+            "value": 3.148561146424989,
+            "timestamp": 1733590800,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNTM2ODYzMTY2NTg0MzdfMTczMzU5NDQwMF9VU0Q=",
+            "value": 3.153686316658437,
+            "timestamp": 1733594400,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNTk1NjczMzQ3NjUyMTZfMTczMzU5ODAwMF9VU0Q=",
+            "value": 3.159567334765216,
+            "timestamp": 1733598000,
+            "__typename": "TimestampedAmount"
+          },
+          {
+            "id": "VGltZXN0YW1wZWRBbW91bnQ6My4xNjE4NDY0NjY5MjEzMzdfMTczMzYwMTYwMF9VU0Q=",
+            "value": 3.161846466921337,
+            "timestamp": 1733601600,
+            "__typename": "TimestampedAmount"
+          }
+        ],
+        "__typename": "TokenMarket"
+      },
+      "__typename": "Token"
     }
+  }
 }
