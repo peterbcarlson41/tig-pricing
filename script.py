@@ -104,8 +104,6 @@ def insert_data(data: dict) -> None:
                 insert_query = f"""
                     INSERT INTO pair_data_recent ({', '.join(columns)})
                     VALUES ({', '.join(['%s'] * len(columns))})
-                    ON CONFLICT (timestamp) DO UPDATE
-                    SET {', '.join(f"{col} = EXCLUDED.{col}" for col in columns)}
                 """
                 cur.execute(insert_query, values)
 
@@ -115,8 +113,6 @@ def insert_data(data: dict) -> None:
                 insert_query = f"""
                     INSERT INTO price_volume_history ({', '.join(columns)})
                     VALUES ({', '.join(['%s'] * len(columns))})
-                    ON CONFLICT (timestamp) DO UPDATE
-                    SET {', '.join(f"{col} = EXCLUDED.{col}" for col in columns)}
                 """
                 cur.execute(insert_query, values)
 
@@ -131,7 +127,7 @@ def get_recent_data():
             with conn.cursor(cursor_factory=RealDictCursor) as cur:
                 cur.execute("""
                     SELECT * FROM pair_data_recent
-                    ORDER BY timestamp DESC
+                    ORDER BY id DESC
                     LIMIT 1
                 """)
                 return cur.fetchone()
@@ -144,10 +140,10 @@ def get_historical_data(start_date: str, end_date: str):
         with get_db_connection() as conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cur:
                 cur.execute("""
-                    SELECT timestamp, price_usd, volume_h24
+                    SELECT id, timestamp, price_usd, volume_h24
                     FROM price_volume_history
                     WHERE timestamp BETWEEN %s AND %s
-                    ORDER BY timestamp
+                    ORDER BY id ASC
                 """, (start_date, end_date))
                 return cur.fetchall()
     except Exception as e:
@@ -157,6 +153,7 @@ def get_historical_data(start_date: str, end_date: str):
 def main():
     while True:
         try:
+            print("Running data collection...") 
             logging.info("Fetching and inserting data...")
             data = fetch_data()
             if data:
@@ -172,3 +169,6 @@ def main():
             logging.error(f"Error in main loop: {e}")
             # Still wait before retrying even if there's an error
             time.sleep(POLL_INTERVAL)
+
+if __name__ == "__main__":
+    main()
