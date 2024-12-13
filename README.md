@@ -1,10 +1,10 @@
 # DexScreener Data Collection
 
-This project automatically fetches and stores DEX pair data from DexScreener API, specifically tracking the BASE/USDC pair at address `0x5280d5E63b416277d0F81FAe54Bb1e0444cAbDAA`. The data is stored in a Supabase database and includes both real-time and historical price tracking.
+This project automatically fetches and stores DEX pair data from DexScreener API, specifically tracking the BASE/USDC pair at address `0x5280d5E63b416277d0F81FAe54Bb1e0444cAbDAA`. The data is stored in a PostgreSQL database hosted on DigitalOcean.
 
 ## Features
 
-- Automated data collection every 5 minutes
+- Automated data collection every 5 minutes using PM2
 - Stores comprehensive pair data including:
   - Price (native and USD)
   - Volume metrics (5m, 1h, 6h, 24h)
@@ -12,82 +12,105 @@ This project automatically fetches and stores DEX pair data from DexScreener API
   - Transaction counts
   - Liquidity information
 - Historical price and volume tracking
-- Automatic price conversion from USD to native currency
+- Runs on a DigitalOcean Droplet for reliability
 
 ## Setup
 
 ### Prerequisites
 
 - Python 3.9 or higher
-- Supabase account and project
-- GitHub account for automated workflows
+- DigitalOcean account
+- PM2 (for process management)
+- Basic Droplet with Ubuntu
 
-### Environment Variables
+### Installation
 
-The following environment variables are required:
+1. Set up your Droplet:
 
-```
-SUPABASE_URL=your_supabase_project_url
-SUPABASE_KEY=your_supabase_api_key
-```
+```bash
+# Update system
+sudo apt update
+sudo apt upgrade -y
 
-### GitHub Secrets
+# Install Python and dependencies
+sudo apt install python3-pip -y
+pip3 install psycopg2-binary requests python-dotenv
 
-Add the following secrets to your GitHub repository:
-
-1. `SUPABASE_URL`: Your Supabase project URL
-2. `SUPABASE_KEY`: Your Supabase API key
-
-## GitHub Actions Workflow
-
-The project uses GitHub Actions for automated data collection. The workflow is defined in `.github/workflows/schedule.yml`:
-
-```yaml
-name: Schedule Data Fetching
-on:
-  schedule:
-    - cron: "*/5 * * * *" # Triggers every 5 minutes
-  workflow_dispatch: # Allows manual trigger
-
-jobs:
-  fetchData:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: "3.9"
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests supabase-py
-      - name: Run the data fetching script
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-        run: |
-          python script.py
+# Install Node.js and PM2
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
+npm install -g pm2
 ```
 
-## Scripts
+2. Set up your environment variables in `.env`:
 
-### `script.py`
+```
+DB_HOST=your-db-cluster.db.ondigitalocean.com
+DB_PORT=25060
+DB_NAME=defaultdb
+DB_USER=doadmin
+DB_PASSWORD=your-password
+```
 
-Main data collection script that:
+3. Create the database tables:
 
-- Fetches data from DexScreener API
-- Processes and formats the data
-- Stores it in Supabase tables
+```sql
+CREATE TABLE pair_data_recent (
+    timestamp TIMESTAMPTZ PRIMARY KEY,
+    chain_id TEXT,
+    dex_id TEXT,
+    url TEXT,
+    pair_address TEXT,
+    price_native NUMERIC,
+    price_usd NUMERIC,
+    fdv NUMERIC,
+    market_cap NUMERIC,
+    pair_created_at TEXT,
+    volume_m5 NUMERIC,
+    volume_h1 NUMERIC,
+    volume_h6 NUMERIC,
+    volume_h24 NUMERIC,
+    price_change_m5 NUMERIC,
+    price_change_h1 NUMERIC,
+    price_change_h6 NUMERIC,
+    price_change_h24 NUMERIC,
+    txns_m5_buys INTEGER,
+    txns_m5_sells INTEGER,
+    txns_h1_buys INTEGER,
+    txns_h1_sells INTEGER,
+    txns_h6_buys INTEGER,
+    txns_h6_sells INTEGER,
+    txns_h24_buys INTEGER,
+    txns_h24_sells INTEGER,
+    liquidity_usd NUMERIC,
+    liquidity_base NUMERIC,
+    liquidity_quote NUMERIC
+);
 
-### `update_prices.py`
+CREATE TABLE price_volume_history (
+    timestamp TIMESTAMPTZ PRIMARY KEY,
+    price_usd NUMERIC,
+    volume_h24 NUMERIC
+);
+```
 
-Utility script that:
+### Running the Script
 
-- Checks for missing native prices in the database
-- Copies USD prices to native price fields when missing
-- Rounds prices to 4 decimal places
+Start the script with PM2:
+
+```bash
+pm2 start script.py --interpreter python3 --name "dex-scraper"
+pm2 save
+pm2 startup
+```
+
+Monitor the script:
+
+```bash
+pm2 logs dex-scraper    # View logs
+pm2 status              # Check status
+pm2 restart dex-scraper # Restart if needed
+```
 
 ## Database Schema
 
@@ -111,30 +134,35 @@ Stores historical price and volume data:
 
 ## Error Handling
 
-The scripts include comprehensive error handling and logging:
+The script includes comprehensive error handling and logging:
 
 - Failed API requests are logged
 - Database connection issues are captured
 - Data validation errors are reported
 - All operations are logged with timestamps
 
-## Manual Execution
+## Security
 
-To run the data collection manually:
-
-1. Clone the repository
-2. Set up environment variables
-3. Install dependencies: `pip install requests supabase-py`
-4. Run the script: `python script.py`
+- Database access is restricted by IP using DigitalOcean's Trusted Sources
+- SSL is required for database connections
+- Credentials are stored in environment variables
+- Running on a dedicated Droplet instead of shared runners
 
 ## Troubleshooting
 
-If the GitHub Action isn't running:
+If the script isn't running:
 
-1. Check the Actions tab for any error messages
-2. Verify the secrets are properly set
-3. Ensure the workflow file has the correct syntax
-4. Remember that GitHub's scheduled actions may have slight delays
+1. Check PM2 logs: `pm2 logs dex-scraper`
+2. Verify database connectivity
+3. Check environment variables
+4. Ensure Python dependencies are installed
+5. Verify Droplet has internet access
+
+Common issues:
+
+- Database connection timeout: Check trusted sources
+- API rate limiting: Verify POLL_INTERVAL
+- Process crashes: Check PM2 logs for errors
 
 ## Contributing
 
