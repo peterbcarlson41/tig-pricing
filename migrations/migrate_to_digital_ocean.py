@@ -53,7 +53,8 @@ source_conn = psycopg2.connect(
     dbname=os.getenv('SUPABASE_DB'),
     user=os.getenv('SUPABASE_USER'),
     password=os.getenv('SUPABASE_PASSWORD'),
-    port=os.getenv('SUPABASE_PORT')
+    port=os.getenv('SUPABASE_PORT'),
+    sslmode='require'
 )
 
 # Destination (DigitalOcean) connection
