@@ -49,12 +49,9 @@ CREATE TABLE IF NOT EXISTS price_volume_history (
 
 # Source (Supabase) connection
 source_conn = psycopg2.connect(
-    host=os.getenv('SUPABASE_HOST'),
-    dbname=os.getenv('SUPABASE_DB'),
-    user=os.getenv('SUPABASE_USER'),
-    password=os.getenv('SUPABASE_PASSWORD'),
-    port=os.getenv('SUPABASE_PORT'),
-    sslmode='require'
+    "postgresql://postgres:{password}@db.zukwsalmpdmnmkizpqvt.supabase.co:5432/postgres?sslmode=require".format(
+        password=os.getenv('SUPABASE_PASSWORD')
+    )
 )
 
 # Destination (DigitalOcean) connection
